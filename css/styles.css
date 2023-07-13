@@ -1,0 +1,167 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+body{
+display: grid;
+height: 100vh;
+grid-template-rows:1fr repeat(2, 1fr) 0.5fr;
+grid-template-columns:  1fr repeat(2, 3fr);
+grid-template-areas: 
+"nav header header"
+"nav main main"
+"nav main main"
+"nav footer footer";
+grid-column-gap: 10px;
+grid-row-gap: 10px;
+
+}
+
+header{
+background-color:lightseagreen;
+grid-area: header;
+
+}
+
+nav{
+background-color:lightseagreen;
+grid-area: nav;
+}
+
+main{
+display: grid;
+background-color:rgb(255, 255, 255);
+grid-area: main;
+grid-template-columns: repeat(2, 1fr) 0.5fr ;
+grid-template-rows:repeat(2, 1fr) ;
+grid-template-areas: 
+"sectionUno sectionUno aside"
+"sectionDos sectionDos aside";
+column-gap: 10px;
+row-gap: 10px
+
+}
+
+#sectionUno{
+background-color:lightseagreen;
+grid-area: sectionUno;
+border: 2px solid black;
+display:grid;
+grid-template-rows: 100px 100px ;
+grid-template-columns:auto auto ;
+column-gap: 5px;
+row-gap: 5px ;
+justify-items:center;
+align-items: center
+
+}
+
+#sectionUno div{
+  background-color:lightsalmon;
+  grid-area: sectionUno;
+  border: 2px solid black;
+  
+  }
+
+#sectionDos{
+  background-color: lightseagreen;
+  grid-area: sectionDos;
+}
+
+aside{
+background-color:lightseagreen;
+grid-area: aside;
+
+}
+
+footer{
+background-color:lightseagreen;
+grid-area: footer;
+}
+
+
+/* desktop-first */
+
+@media (max-width: 1200px){
+
+}
+
+@media (max-width: 1023px){
+  nav{
+    background-color: rgb(18, 18, 60);
+  }
+}
+
+@media (max-width: 768px){
+  
+  body{
+    grid-template-rows:1fr  1fr repeat(2, 1fr) 0.5fr;
+  grid-template-columns:repeat(2, 2fr);
+  grid-template-areas: 
+  "header header"
+  "nav nav"
+  "main main"
+  "main main"
+  "footer footer";
+  }
+
+  nav{
+    background-color: blue;
+  }
+}
+
+@media (max-width: 600px){
+  main{
+grid-template-columns: repeat(2, 2fr) ;
+grid-template-rows:repeat(2, 1fr) ;
+grid-template-areas: 
+"sectionUno sectionUno"
+"sectionDos sectionDos";
+  }
+ aside{
+  display: none;
+ }
+ nav{
+  background-color: rgb(117, 202, 26);
+}
+
+}
+
+@media (max-width: 480px){
+  nav{
+    background-color: rgb(0, 0, 0);
+  }
+}
+
+@media (max-width:320px){
+
+}
+
+/* Mobile-first */
+/* 
+@media(min-width:320px){
+
+}
+
+@media(min-width:480px){
+  
+}
+
+@media(min-width:600px){
+  
+}
+
+@media(min-width:768px){
+  
+}
+
+@media(min-width:1023px){
+  
+}
+
+@media(min-width:1200px){
+  
+} */
